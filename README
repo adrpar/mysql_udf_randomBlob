@@ -1,0 +1,31 @@
+This is a MySQL UDF that produces random blobs with a given size.
+
+To install
+----------
+
+1) edit CMakeList.txt accordingly to point to the directory 
+   where mysql is installed.
+
+2) mkdir build
+   cd build
+
+3) cmake ..
+
+4) make
+
+5) make install
+
+6) log into mysql server as root and execute the commands in 
+   install_udfs.sql
+
+   This will setup the neccessary tables, install the plugin
+   and create all the UDFs needed to administer the queue.
+
+How to use
+----------
+
+randomBlob( numberOfBytes )
+
+e.g. for a BLOB of size 128 bytes:
+
+SELECT randomBlob( 128 );
